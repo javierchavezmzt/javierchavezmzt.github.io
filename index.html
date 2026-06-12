@@ -1,0 +1,137 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #F5F3F0; color: #1a1a1a; }
+  .site { max-width: 700px; margin: 0 auto; padding: 0 2rem; }
+  .nav { display: flex; justify-content: center; gap: 2.5rem; padding: 1.5rem 0; border-bottom: 1px solid #ddd; margin-bottom: 3rem; }
+  .nav a { font-size: 13px; font-weight: 600; color: #1a1a1a; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; padding-bottom: 2px; font-family: sans-serif; }
+  .nav a.active { border-bottom: 2px solid #E85D04; color: #E85D04; }
+  .page { display: none; }
+  .page.active { display: block; }
+  .home-grid { display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: start; margin-bottom: 3rem; }
+  .home-headline { font-size: 34px; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; color: #1a1a1a; font-family: sans-serif; }
+  .home-sub { font-size: 16px; color: #555; line-height: 1.6; font-family: sans-serif; }
+  .home-photo { width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #ddd; }
+  .home-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .home-photo-caption { font-size: 11px; color: #888; margin-top: 6px; font-style: italic; line-height: 1.4; font-family: sans-serif; }
+  .stars { text-align: center; font-size: 14px; color: #aaa; letter-spacing: 8px; margin: 2.5rem 0; }
+  .home-body { font-size: 16px; line-height: 1.85; color: #333; margin-bottom: 2rem; font-family: sans-serif; }
+  .home-body p { margin-bottom: 1rem; }
+  .home-body strong { color: #1a1a1a; font-weight: 700; }
+  .email-input { width: 100%; padding: 14px 16px; font-size: 15px; border: 1px solid #ccc; background: #fff; color: #1a1a1a; outline: none; font-family: sans-serif; }
+  .email-btn { width: 100%; padding: 14px 16px; font-size: 15px; font-weight: 700; background: #1a1a1a; color: #F5F3F0; border: none; cursor: pointer; font-family: sans-serif; letter-spacing: 0.02em; margin-top: 0; }
+  .email-note { font-size: 12px; color: #999; margin-top: 8px; font-family: sans-serif; }
+  .about-headline { font-size: 28px; font-weight: 700; margin-bottom: 1.5rem; font-family: sans-serif; }
+  .about-body { font-size: 15px; line-height: 1.85; color: #333; font-family: sans-serif; }
+  .about-body p { margin-bottom: 1.2rem; }
+  .about-body strong { color: #1a1a1a; font-weight: 700; }
+  .about-creds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 2rem 0; }
+  .cred { background: #ebe9e6; padding: 14px; }
+  .cred-num { font-size: 22px; font-weight: 700; color: #1a1a1a; font-family: sans-serif; }
+  .cred-label { font-size: 12px; color: #666; margin-top: 2px; line-height: 1.4; font-family: sans-serif; }
+  .faqs-headline { font-size: 28px; font-weight: 700; margin-bottom: 2rem; font-family: sans-serif; }
+  .faq { border-top: 1px solid #ddd; padding: 1.25rem 0; }
+  .faq:last-child { border-bottom: 1px solid #ddd; }
+  .faq-q { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; font-family: sans-serif; }
+  .faq-a { font-size: 14px; color: #555; line-height: 1.7; font-family: sans-serif; }
+  .footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: flex-end; }
+  .footer-left { font-size: 12px; color: #999; line-height: 1.8; font-family: sans-serif; }
+  .footer-right { font-size: 11px; color: #E85D04; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; text-align: right; line-height: 1.7; font-family: sans-serif; }
+  .footer-nunca { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-family: sans-serif; }
+</style>
+
+<div class="site">
+  <nav class="nav">
+    <a class="active" onclick="showPage('home',this)">Home</a>
+    <a onclick="showPage('about',this)">About</a>
+    <a onclick="showPage('herramientas',this)">Herramientas</a>
+    <a onclick="showPage('faqs',this)">FAQs</a>
+  </nav>
+
+  <div class="page active" id="page-home">
+    <div class="home-grid">
+      <div>
+        <h1 class="home-headline">Leo para entender el mundo. Escribo para no olvidar lo que aprendo.</h1>
+        <p class="home-sub">Cada lunes te mando algo que me resonó.</p>
+      </div>
+      <div>
+        <div class="home-photo">
+          <img src="/mnt/user-data/uploads/20230426_103731.jpg" alt="Javier Chavez" />
+        </div>
+        <p class="home-photo-caption">Ingeniero Civil, 21 años formando ingenieros. Ahora construyo mentalidades.</p>
+      </div>
+    </div>
+    <div class="stars">★ ★ ★</div>
+    <div class="home-body">
+      <p>Mi nombre es <strong>Javier Chávez</strong>, vengo de La Petaca, un poblado de la sierra en Sinaloa.</p>
+      <p>Te preguntarás qué puede enseñarte alguien que creció en la sierra.</p>
+      <p>21 años formando ingenieros. Y todavía tengo dudas. Sigo leyendo, sigo aprendiendo.</p>
+      <p>Cada lunes te escribo algo que me resonó — porque todos tenemos una historia que contar, y la mía apenas sigue.</p>
+    </div>
+    <input class="email-input" type="email" placeholder="Ok, toma mi email" />
+    <button class="email-btn">Me apunto</button>
+    <p class="email-note">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
+  </div>
+
+  <div class="page" id="page-about">
+    <h2 class="about-headline">Quién soy y de dónde vengo.</h2>
+    <div class="about-body">
+      <p>Soy Javier Chávez. Empecé desde cero. Mi origen es de un poblado de la sierra — La Petaca, Concordia, Sinaloa. Fui mesero, lavador de carros y ayudante de mecánico. En mi formación académica no fui el más sobresaliente, pero siempre tuve curiosidad por entender por qué a unas personas les va bien y a otras no. Entendí que para lograr algo hay que insistir, persistir, resistir, nunca desistir — y estar abiertos y receptivos.</p>
+      <p>Actualmente Ingeniero Civil con Maestría por la UNAM y Doctorado por el CESSSIN. Llevo 21 años como Profesor-Investigador en la Universidad Autónoma de Sinaloa y fui Director de la Facultad de Ingeniería y Tecnología de Mazatlán. Hoy soy Director del Parque MZT Aerospace y fundador de Grupo SAETI, firma de ingeniería con proyectos activos de infraestructura en Sinaloa.</p>
+      <p>Esta newsletter nació de algo muy simple: <strong>escribir para no olvidar lo que aprendo.</strong></p>
+    </div>
+    <div class="about-creds">
+      <div class="cred"><div class="cred-num">21+</div><div class="cred-label">años como profesor-investigador UAS</div></div>
+      <div class="cred"><div class="cred-num">25+</div><div class="cred-label">años ejerciendo como ingeniero</div></div>
+      <div class="cred"><div class="cred-num">Red</div><div class="cred-label">en crecimiento — ingenieros, arquitectos y estudiantes</div></div>
+    </div>
+    <div class="about-body">
+      <p>Mi filosofía: <strong>Insistir · Persistir · Resistir · Nunca desistir.</strong></p>
+    </div>
+  </div>
+
+  <div class="page" id="page-herramientas">
+    <h2 class="faqs-headline">Herramientas gratuitas para ingenieros y constructores.</h2>
+    <p style="font-size:15px; color:#555; line-height:1.7; margin-bottom:2rem; font-family:sans-serif;">Las construyo porque las necesito en mi trabajo. Las comparto porque a alguien más le van a servir. Sin costo, sin registro.</p>
+    <div style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+        <div>
+          <div style="font-size:11px; font-weight:700; color:#E85D04; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; font-family:sans-serif;">Hidráulica</div>
+          <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:6px; font-family:sans-serif;">Simulador de Canal Trapezoidal</div>
+          <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula tirante normal, tirante crítico, número de Froude, régimen de flujo y perfil longitudinal. Basado en la ecuación de Manning. Para diseño de canales de riego, drenaje y obra hidráulica.</div>
+        </div>
+        <a href="https://javierchavezmzt.github.io/simulador-hidraulico" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
+      </div>
+    </div>
+    <div style="background:#F5F3F0; border:1px dashed #ccc; border-radius:4px; padding:1.5rem 1.75rem; text-align:center;">
+      <div style="font-size:14px; color:#999; font-family:sans-serif;">Más herramientas en camino — suscríbete para ser el primero en saber.</div>
+      <div style="margin-top:1rem; display:flex; gap:8px; max-width:420px; margin-left:auto; margin-right:auto;">
+        <input type="email" placeholder="tu@email.com" style="flex:1; padding:10px 14px; font-size:14px; border:1px solid #ccc; background:#fff; outline:none; font-family:sans-serif;" />
+        <button style="padding:10px 16px; font-size:13px; font-weight:700; background:#E85D04; color:#fff; border:none; cursor:pointer; font-family:sans-serif;">Me apunto</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-faqs">
+    <h2 class="faqs-headline">Preguntas frecuentes.</h2>
+    <div class="faq"><div class="faq-q">¿Cada cuándo llegan los correos?</div><div class="faq-a">Cada lunes. Un correo a la semana, sin excepciones.</div></div>
+    <div class="faq"><div class="faq-q">¿De qué van los correos?</div><div class="faq-a">De lo que leo, vivo y pienso. Mentalidad, carrera, finanzas personales, liderazgo — siempre desde la lógica de un ingeniero que lleva 25 años en el campo.</div></div>
+    <div class="faq"><div class="faq-q">¿Es gratis?</div><div class="faq-a">Sí. Por ahora el newsletter es completamente gratuito.</div></div>
+    <div class="faq"><div class="faq-q">¿Me vas a mandar spam o vender cosas?</div><div class="faq-a">No. Un correo a la semana con ideas reales. Si en algún momento hay algo que vender, lo diré sin rodeos y sin disfrazar la promoción de contenido.</div></div>
+    <div class="faq"><div class="faq-q">¿Puedo darme de baja?</div><div class="faq-a">Cuando quieras, con un clic. Sin preguntas, sin drama.</div></div>
+    <div class="faq"><div class="faq-q">¿Para quién es esto?</div><div class="faq-a">Para estudiantes de ingeniería y arquitectura, profesionistas del área de la construcción — y para cualquiera que crea que reconstruirse vale la pena.</div></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">Javier Chávez · @javierchavezmzt<br>Ing. Civil · Director · Mazatlán, México</div>
+    <div class="footer-right">Insistir · Persistir · Resistir<br><span class="footer-nunca">Nunca desistir</span></div>
+  </div>
+</div>
+
+<script>
+function showPage(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (el) el.classList.add('active');
+}
+</script>
