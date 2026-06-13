@@ -87,11 +87,18 @@
       <p>Cada lunes te escribo algo que me resonó — porque todos tenemos una historia que contar, y la mía apenas sigue.</p>
     </div>
     <div class="email-wrap">
-      <div style="display:flex; gap:0; max-width:520px;">
-        <input id="email-home" type="email" placeholder="Ok, toma mi email" style="flex:1; padding:12px 14px; font-size:15px; border:1px solid #ccc; background:#fff; color:#1a1a1a; outline:none; font-family:inherit;" />
-        <button onclick="subscribeHome()" style="padding:12px 20px; font-size:14px; font-weight:700; background:#1a1a1a; color:#F5F3F0; border:none; cursor:pointer; font-family:inherit; white-space:nowrap;">Me apunto</button>
+      <style>
+        #beehiiv-embed .bh-form-header { display: none !important; }
+        #beehiiv-embed .bh-form-description { display: none !important; }
+        #beehiiv-embed .bh-form-title { display: none !important; }
+        #beehiiv-embed img { display: none !important; }
+        #beehiiv-embed h1, #beehiiv-embed h2, #beehiiv-embed p:not(.bh-form-disclaimer) { display: none !important; }
+        #beehiiv-embed iframe { max-width: 520px !important; }
+      </style>
+      <div id="beehiiv-embed">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="28f2a296-586a-4dff-a1e5-373dd3b46144"></script>
       </div>
-      <p id="msg-home" style="font-size:13px; color:#999; margin-top:8px;">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
+      <p style="font-size:13px; color:#999; margin-top:4px;">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
     </div>
   </div>
 
