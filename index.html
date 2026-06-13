@@ -62,6 +62,7 @@
     <a onclick="showPage('about',this)">About</a>
     <a onclick="showPage('herramientas',this)">Herramientas</a>
     <a onclick="showPage('faqs',this)">FAQs</a>
+    <a onclick="goToSubscribe()" style="color:#E85D04; border:1px solid #E85D04; padding:4px 14px; border-radius:2px;">Suscribirme</a>
   </nav>
 
   <div class="page active" id="page-home">
@@ -161,40 +162,28 @@ function showPage(name, el) {
   if (el) el.classList.add('active');
 }
 
-async function subscribe(email, msgId) {
-  if (!email || !email.includes('@')) {
-    document.getElementById(msgId).style.color = '#E85D04';
-    document.getElementById(msgId).textContent = 'Por favor ingresa un correo válido.';
-    return;
-  }
-  document.getElementById(msgId).style.color = '#999';
-  document.getElementById(msgId).textContent = 'Enviando...';
-  try {
-    const res = await fetch('https://api.beehiiv.com/v2/publications/pub_28f2a296-586a-4dff-a1e5-373dd3b46144/subscriptions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true })
-    });
-    if (res.ok) {
-      document.getElementById(msgId).style.color = '#2a9d2a';
-      document.getElementById(msgId).textContent = '¡Listo! Ya estás dentro. Revisa tu correo.';
-    } else {
-      document.getElementById(msgId).style.color = '#E85D04';
-      document.getElementById(msgId).textContent = 'Algo salió mal. Intenta de nuevo.';
-    }
-  } catch(e) {
-    document.getElementById(msgId).style.color = '#E85D04';
-    document.getElementById(msgId).textContent = 'Error de conexión. Intenta de nuevo.';
-  }
-}
-
 function subscribeHome() {
   const email = document.getElementById('email-home').value;
-  subscribe(email, 'msg-home');
+  if (!email || !email.includes('@')) {
+    document.getElementById('msg-home').style.color = '#E85D04';
+    document.getElementById('msg-home').textContent = 'Por favor ingresa un correo válido.';
+    return;
+  }
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
 }
 
 function subscribeTools() {
   const email = document.getElementById('email-tools').value;
-  subscribe(email, 'msg-tools');
+  if (!email || !email.includes('@')) {
+    document.getElementById('msg-tools').style.color = '#E85D04';
+    document.getElementById('msg-tools').textContent = 'Por favor ingresa un correo válido.';
+    return;
+  }
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+}
+
+function goToSubscribe() {
+  showPage('home', document.querySelector('.nav a'));
+  setTimeout(() => { document.getElementById('email-home').focus(); }, 100);
 }
 </script>
