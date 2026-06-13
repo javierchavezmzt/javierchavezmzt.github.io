@@ -169,7 +169,7 @@ function subscribeHome() {
     document.getElementById('msg-home').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
-  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  window.location.href = 'https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
 }
 
 function subscribeTools() {
@@ -179,7 +179,7 @@ function subscribeTools() {
     document.getElementById('msg-tools').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
-  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  window.location.href = 'https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
 }
 
 function goToSubscribe() {
