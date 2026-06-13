@@ -86,7 +86,11 @@
       <p>Cada lunes te escribo algo que me resonó — porque todos tenemos una historia que contar, y la mía apenas sigue.</p>
     </div>
     <div class="email-wrap">
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="28f2a296-586a-4dff-a1e5-373dd3b46144"></script>
+      <div style="display:flex; gap:0; max-width:520px;">
+        <input id="email-home" type="email" placeholder="Ok, toma mi email" style="flex:1; padding:12px 14px; font-size:15px; border:1px solid #ccc; background:#fff; color:#1a1a1a; outline:none; font-family:inherit;" />
+        <button onclick="subscribeHome()" style="padding:12px 20px; font-size:14px; font-weight:700; background:#1a1a1a; color:#F5F3F0; border:none; cursor:pointer; font-family:inherit; white-space:nowrap;">Me apunto</button>
+      </div>
+      <p id="msg-home" style="font-size:13px; color:#999; margin-top:8px;">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
     </div>
   </div>
 
@@ -121,11 +125,12 @@
       </div>
     </div>
     <div style="background:#F5F3F0; border:1px dashed #ccc; border-radius:4px; padding:1.5rem 1.75rem; text-align:center;">
-      <div style="font-size:14px; color:#999; font-family:sans-serif;">Más herramientas en camino — suscríbete para ser el primero en saber.</div>
-      <div style="margin-top:1rem; display:flex; gap:8px; max-width:420px; margin-left:auto; margin-right:auto;">
-        <input type="email" placeholder="tu@email.com" style="flex:1; padding:10px 14px; font-size:14px; border:1px solid #ccc; background:#fff; outline:none; font-family:sans-serif;" />
-        <button style="padding:10px 16px; font-size:13px; font-weight:700; background:#E85D04; color:#fff; border:none; cursor:pointer; font-family:sans-serif;">Me apunto</button>
+      <div style="font-size:14px; color:#999; font-family:sans-serif; margin-bottom:1rem;">Más herramientas en camino — suscríbete para ser el primero en saber.</div>
+      <div style="display:flex; gap:0; max-width:420px; margin:0 auto;">
+        <input id="email-tools" type="email" placeholder="tu@email.com" style="flex:1; padding:10px 14px; font-size:14px; border:1px solid #ccc; background:#fff; outline:none; font-family:sans-serif;" />
+        <button onclick="subscribeTools()" style="padding:10px 16px; font-size:13px; font-weight:700; background:#E85D04; color:#fff; border:none; cursor:pointer; font-family:sans-serif;">Me apunto</button>
       </div>
+      <p id="msg-tools" style="font-size:12px; color:#999; margin-top:8px;"></p>
     </div>
   </div>
 
@@ -154,5 +159,42 @@ function showPage(name, el) {
   document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
   if (el) el.classList.add('active');
+}
+
+async function subscribe(email, msgId) {
+  if (!email || !email.includes('@')) {
+    document.getElementById(msgId).style.color = '#E85D04';
+    document.getElementById(msgId).textContent = 'Por favor ingresa un correo válido.';
+    return;
+  }
+  document.getElementById(msgId).style.color = '#999';
+  document.getElementById(msgId).textContent = 'Enviando...';
+  try {
+    const res = await fetch('https://api.beehiiv.com/v2/publications/pub_28f2a296-586a-4dff-a1e5-373dd3b46144/subscriptions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true })
+    });
+    if (res.ok) {
+      document.getElementById(msgId).style.color = '#2a9d2a';
+      document.getElementById(msgId).textContent = '¡Listo! Ya estás dentro. Revisa tu correo.';
+    } else {
+      document.getElementById(msgId).style.color = '#E85D04';
+      document.getElementById(msgId).textContent = 'Algo salió mal. Intenta de nuevo.';
+    }
+  } catch(e) {
+    document.getElementById(msgId).style.color = '#E85D04';
+    document.getElementById(msgId).textContent = 'Error de conexión. Intenta de nuevo.';
+  }
+}
+
+function subscribeHome() {
+  const email = document.getElementById('email-home').value;
+  subscribe(email, 'msg-home');
+}
+
+function subscribeTools() {
+  const email = document.getElementById('email-tools').value;
+  subscribe(email, 'msg-tools');
 }
 </script>
