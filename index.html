@@ -13,22 +13,41 @@
   .page.active { display: block; }
 
   /* HOME */
-  .home-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; margin-bottom: 3rem; }
-  .home-headline { font-size: 50px; font-weight: 700; line-height: 1.1; margin-bottom: 1.2rem; color: #1a1a1a; }
-  .home-sub { font-size: 20px; color: #555; line-height: 1.6; }
+  .home-label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: #FFF0E8; color: #E85D04; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.2rem; }
+  .home-headline { font-size: 46px; font-weight: 700; line-height: 1.1; margin-bottom: 1.2rem; color: #1a1a1a; }
+  .home-sub { font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 2rem; max-width: 580px; }
+  .stars { text-align: center; font-size: 14px; color: #bbb; letter-spacing: 10px; margin: 2.5rem 0; }
+  .home-body { font-size: 19px; line-height: 1.9; color: #333; margin-bottom: 2rem; }
+  .home-body p { margin-bottom: 1.1rem; }
+  .home-body strong { color: #1a1a1a; font-weight: 700; }
+  .home-who { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start; margin-bottom: 2rem; }
   .home-photo { width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #ddd; }
   .home-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .home-photo-caption { font-size: 12px; color: #888; margin-top: 8px; font-style: italic; line-height: 1.5; }
-  .stars { text-align: center; font-size: 14px; color: #bbb; letter-spacing: 10px; margin: 2.5rem 0; }
-  .home-body { font-size: 19px; line-height: 1.9; color: #333; margin-bottom: 2.5rem; }
-  .home-body p { margin-bottom: 1.1rem; }
-  .home-body strong { color: #1a1a1a; font-weight: 700; }
 
-  /* EMAIL FORM */
-  .email-wrap { max-width: 520px; }
-  .email-input { width: 100%; padding: 14px 16px; font-size: 16px; border: 1px solid #ccc; background: #fff; color: #1a1a1a; outline: none; font-family: inherit; }
-  .email-btn { width: 100%; padding: 14px 16px; font-size: 16px; font-weight: 700; background: #1a1a1a; color: #F5F3F0; border: none; cursor: pointer; font-family: inherit; letter-spacing: 0.02em; }
-  .email-note { font-size: 13px; color: #999; margin-top: 8px; }
+  /* VALUE CARDS */
+  .value-section { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 2rem 0; margin: 2.5rem 0; }
+  .value-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 1.2rem; }
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .value-card { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 18px; }
+  .value-card .vc-icon { font-size: 20px; color: #E85D04; margin-bottom: 10px; }
+  .value-card .vc-title { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .value-card .vc-desc { font-size: 13px; color: #666; line-height: 1.6; }
+  .value-card .vc-link { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #E85D04; text-decoration: none; cursor: pointer; }
+
+  /* CTA FORM */
+  .cta-row { display: flex; gap: 0; max-width: 520px; }
+  .cta-row input { flex: 1; padding: 13px 16px; font-size: 15px; border: 1px solid #ccc; background: #fff; color: #1a1a1a; outline: none; font-family: inherit; }
+  .cta-row button { padding: 13px 22px; font-size: 14px; font-weight: 700; background: #1a1a1a; color: #F5F3F0; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; }
+  .cta-note { font-size: 13px; color: #999; margin-top: 8px; }
+
+  /* CTA 2 */
+  .cta2-block { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+  .cta2-block .cta2-head { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .cta2-block .cta2-sub { font-size: 15px; color: #666; margin-bottom: 1.5rem; }
+  .cta2-block .cta2-row { display: flex; gap: 0; max-width: 420px; margin: 0 auto; }
+  .cta2-block .cta2-row input { flex: 1; padding: 12px 14px; font-size: 14px; border: 1px solid #ccc; background: #F5F3F0; color: #1a1a1a; outline: none; font-family: inherit; }
+  .cta2-block .cta2-row button { padding: 12px 20px; font-size: 14px; font-weight: 700; background: #E85D04; color: #fff; border: none; cursor: pointer; font-family: inherit; }
 
   /* SECCIÓN TÍTULOS — consistentes en todas las pestañas */
   .page-headline { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; color: #1a1a1a; }
@@ -65,11 +84,45 @@
   </nav>
 
   <div class="page active" id="page-home">
-    <div class="home-grid">
-      <div>
-        <h1 class="home-headline">Leo para entender el mundo. Escribo para no olvidar lo que aprendo.</h1>
-        <p class="home-sub">Cada lunes una idea sobre mentalidad, salud, finanzas o construcción — desde la lógica de un ingeniero que lleva 21 años en el campo y todavía sigue aprendiendo.</p>
-        <p style="font-size:20px; color:#E85D04; font-weight:600; line-height:1.7; margin-top:1.4rem; font-family:inherit;">Para construir carácter, afilar la mentalidad y tomar mejores decisiones.</p>
+    <div class="home-label">Newsletter gratuito · Cada lunes</div>
+    <h1 class="home-headline">Bienvenido a un lugar en constante reconstrucción.</h1>
+    <p class="home-sub">Un correo a la semana — sin spam, sin motivación vacía. Solo lo que aprendo aplicando ingeniería a la vida: mentalidad, decisiones y carácter.</p>
+    <div class="cta-row">
+      <input id="email-home" type="email" placeholder="Ok, toma mi email" />
+      <button onclick="subscribeHome()">Me apunto — es gratis</button>
+    </div>
+    <p id="msg-home" class="cta-note">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
+
+    <div class="value-section">
+      <div class="value-label">Qué recibes al suscribirte</div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="vc-icon">✉</div>
+          <div class="vc-title">Newsletter semanal</div>
+          <div class="vc-desc">Cada lunes una idea sobre mentalidad, carácter o decisiones — desde la lógica de un ingeniero.</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">⚙</div>
+          <div class="vc-title">Herramientas gratis</div>
+          <div class="vc-desc">Calculadoras y simuladores técnicos para obra. Sin registro, sin costo.</div>
+          <span class="vc-link" onclick="showPage('herramientas', document.querySelectorAll('.nav a')[2])">Ver herramientas →</span>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">📐</div>
+          <div class="vc-title">21 años en el campo</div>
+          <div class="vc-desc">No es teoría. Es lo que enseño y lo que vivo — desde obra hasta el salón de clases.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stars">★ ★ ★</div>
+
+    <div class="home-who">
+      <div class="home-body">
+        <p>Mi nombre es <strong>Javier Chávez</strong>, vengo de La Petaca, un poblado de la sierra en Sinaloa.</p>
+        <p>Te preguntarás qué puede enseñarte alguien que creció en la sierra.</p>
+        <p>21 años formando ingenieros. Y todavía tengo dudas. Sigo leyendo, sigo aprendiendo.</p>
+        <p>Cada lunes te escribo algo que me resonó — porque todos tenemos una historia que contar, y la mía apenas sigue.</p>
       </div>
       <div>
         <div class="home-photo">
@@ -78,19 +131,15 @@
         <p class="home-photo-caption">Ingeniero Civil, 21 años formando ingenieros. Ahora construyo mentalidades.</p>
       </div>
     </div>
-    <div class="stars">★ ★ ★</div>
-    <div class="home-body">
-      <p>Mi nombre es <strong>Javier Chávez</strong>, vengo de La Petaca, un poblado de la sierra en Sinaloa.</p>
-      <p>Te preguntarás qué puede enseñarte alguien que creció en la sierra.</p>
-      <p>21 años formando ingenieros. Y todavía tengo dudas. Sigo leyendo, sigo aprendiendo.</p>
-      <p>Cada lunes te escribo algo que me resonó — porque todos tenemos una historia que contar, y la mía apenas sigue.</p>
-    </div>
-    <div class="email-wrap">
-      <div style="display:flex; gap:0; max-width:520px;">
-        <input id="email-home" type="email" placeholder="Ok, toma mi email" style="flex:1; padding:12px 14px; font-size:15px; border:1px solid #ccc; background:#fff; color:#1a1a1a; outline:none; font-family:inherit;" />
-        <button onclick="subscribeHome()" style="padding:12px 20px; font-size:14px; font-weight:700; background:#1a1a1a; color:#F5F3F0; border:none; cursor:pointer; font-family:inherit; white-space:nowrap;">Me apunto</button>
+
+    <div class="cta2-block">
+      <div class="cta2-head">¿Ya te convenciste?</div>
+      <div class="cta2-sub">Nos vemos el lunes que viene. Gratis, siempre.</div>
+      <div class="cta2-row">
+        <input id="email-home2" type="email" placeholder="tu@email.com" />
+        <button onclick="subscribeHome2()">Me apunto</button>
       </div>
-      <p id="msg-home" style="font-size:13px; color:#999; margin-top:8px;">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
+      <p id="msg-home2" style="font-size:12px; color:#999; margin-top:8px;"></p>
     </div>
   </div>
 
@@ -122,16 +171,6 @@
           <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula tirante normal, tirante crítico, número de Froude, régimen de flujo y perfil longitudinal. Basado en la ecuación de Manning. Para diseño de canales de riego, drenaje y obra hidráulica.</div>
         </div>
         <a href="https://javierchavezmzt.github.io/simulador-hidraulico" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
-      </div>
-    </div>
-    <div style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
-        <div>
-          <div style="font-size:11px; font-weight:700; color:#E85D04; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; font-family:sans-serif;">Estructuras · Obra</div>
-          <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:6px; font-family:sans-serif;">Calculadora de Concreto Hecho en Obra</div>
-          <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula sacos de cemento CPC 30R (25 kg), cubetas de arena, grava y litros de agua según la resistencia de proyecto f'c. Dosificación por volumen para obra, optimizada para celular. Desarrollada por Proyecta.</div>
-        </div>
-        <a href="https://javierchavezmzt.github.io/calculadora-concreto/" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
       </div>
     </div>
     <div style="background:#F5F3F0; border:1px dashed #ccc; border-radius:4px; padding:1.5rem 1.75rem; text-align:center;">
@@ -186,6 +225,16 @@ function subscribeTools() {
   if (!email || !email.includes('@')) {
     document.getElementById('msg-tools').style.color = '#E85D04';
     document.getElementById('msg-tools').textContent = 'Por favor ingresa un correo válido.';
+    return;
+  }
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+}
+
+function subscribeHome2() {
+  const email = document.getElementById('email-home2').value;
+  if (!email || !email.includes('@')) {
+    document.getElementById('msg-home2').style.color = '#E85D04';
+    document.getElementById('msg-home2').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
   window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
