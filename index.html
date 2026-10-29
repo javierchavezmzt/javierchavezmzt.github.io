@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javier Chávez · Constructor de Mentalidades</title>
+<meta name="description" content="Un correo a la semana, sin spam y sin motivación vacía: lo que aprendo aplicando ingeniería a la vida. Mentalidad, decisiones y carácter. Más herramientas gratis para obra.">
+<meta name="theme-color" content="#F5F3F0">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Javier Chávez · Constructor de Mentalidades">
+<meta property="og:description" content="Un correo a la semana, sin spam y sin motivación vacía. Mentalidad, decisiones y carácter, desde la lógica de un ingeniero.">
+<meta property="og:url" content="https://javierchavezmzt.com/">
+<meta property="og:image" content="https://javierchavezmzt.com/afac.jpg">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F3F0; color: #1a1a1a; }
@@ -73,8 +87,50 @@
   .footer-right { text-align: right; }
   .footer-mantra { font-size: 12px; color: #E85D04; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.7; }
   .footer-nunca { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.07em; }
-</style>
 
+  /* ===== CELULAR ===== */
+  img { max-width: 100%; }
+  .nav a { padding: 8px 2px 3px; }
+  @media (max-width: 720px) {
+    .site { padding: 0 1.25rem; }
+    .nav { gap: 1.1rem; flex-wrap: wrap; padding: 0.9rem 0; margin-bottom: 2rem; }
+    .nav a { font-size: 12px; }
+
+    .home-headline { font-size: 32px; line-height: 1.15; }
+    .home-sub { font-size: 16px; line-height: 1.65; }
+    .home-body { font-size: 17px; line-height: 1.75; }
+    .page-headline { font-size: 27px; }
+
+    .cta-row, .cta2-block .cta2-row { flex-direction: column; gap: 10px; max-width: none; }
+    .cta-row input, .cta2-block .cta2-row input { font-size: 16px; width: 100%; }
+    .cta-row button, .cta2-block .cta2-row button { width: 100%; padding: 14px 18px; }
+
+    .value-grid { grid-template-columns: 1fr; }
+    .home-who { grid-template-columns: 1fr; gap: 1.75rem; }
+    .home-photo { max-width: 300px; margin: 0 auto; }
+    .home-photo-caption { text-align: center; }
+    .cta2-block { padding: 1.5rem 1.1rem; }
+
+    .about-body { font-size: 16px; line-height: 1.8; }
+    .about-creds { grid-template-columns: 1fr; }
+    .cred { padding: 18px; }
+    .cred-num { font-size: 34px; }
+
+    .faq-q, .faq-a { font-size: 16px; }
+
+    .tool { padding: 1.15rem 1.1rem !important; }
+    .tool-row { flex-direction: column; gap: 1rem !important; }
+    .tool-btn { align-self: stretch; text-align: center; padding: 13px 18px !important; }
+    .tool-input { font-size: 16px !important; }
+    .tool-form { flex-direction: column; gap: 10px !important; }
+    .tool-form button { padding: 13px 16px !important; }
+
+    .footer { flex-direction: column; align-items: flex-start; gap: 1.25rem; margin-top: 3rem; }
+    .footer-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
 <div class="site">
   <nav class="nav">
     <a class="active" onclick="showPage('home',this)">Home</a>
@@ -126,7 +182,7 @@
       </div>
       <div>
         <div class="home-photo">
-          <img src="afac.jpg" alt="Javier Chavez" />
+          <img src="afac.jpg" alt="Javier Chávez" loading="eager" />
         </div>
         <p class="home-photo-caption">Ingeniero Civil, 21 años formando ingenieros. Ahora construyo mentalidades.</p>
       </div>
@@ -163,40 +219,40 @@
   <div class="page" id="page-herramientas">
     <h2 class="page-headline">Herramientas gratuitas para ingenieros y constructores.</h2>
     <p style="font-size:17px; color:#555; line-height:1.8; margin-bottom:2rem;">Las construyo porque las necesito en mi trabajo. Las comparto porque a alguien más le van a servir. Sin costo, sin registro.</p>
-    <div style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+    <div class="tool" style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
+      <div class="tool-row" style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
         <div>
           <div style="font-size:11px; font-weight:700; color:#E85D04; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; font-family:sans-serif;">Hidráulica</div>
           <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:6px; font-family:sans-serif;">Simulador de Canal Trapezoidal</div>
           <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula tirante normal, tirante crítico, número de Froude, régimen de flujo y perfil longitudinal. Basado en la ecuación de Manning. Para diseño de canales de riego, drenaje y obra hidráulica.</div>
         </div>
-        <a href="https://javierchavezmzt.github.io/simulador-hidraulico" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
+        <a href="https://javierchavezmzt.github.io/simulador-hidraulico" target="_blank" rel="noopener" class="tool-btn" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
       </div>
     </div>
-    <div style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+    <div class="tool" style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
+      <div class="tool-row" style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
         <div>
           <div style="font-size:11px; font-weight:700; color:#E85D04; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; font-family:sans-serif;">Estructuras · Obra</div>
           <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:6px; font-family:sans-serif;">Calculadora de Concreto Hecho en Obra</div>
           <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula sacos de cemento CPC 30R (25 kg), cubetas de arena, grava y litros de agua según la resistencia de proyecto f'c. Dosificación por volumen para obra, optimizada para celular. Desarrollada por Proyecta.</div>
         </div>
-        <a href="https://javierchavezmzt.github.io/calculadora-concreto/" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
+        <a href="https://javierchavezmzt.github.io/calculadora-concreto/" target="_blank" rel="noopener" class="tool-btn" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
       </div>
     </div>
-    <div style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+    <div class="tool" style="border:1px solid #ddd; border-radius:4px; padding:1.5rem 1.75rem; margin-bottom:1rem; background:#fff;">
+      <div class="tool-row" style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
         <div>
           <div style="font-size:11px; font-weight:700; color:#E85D04; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; font-family:sans-serif;">Mampostería · Obra</div>
           <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:6px; font-family:sans-serif;">Calculadora de Ladrillos y Blocks</div>
           <div style="font-size:14px; color:#555; line-height:1.6; font-family:sans-serif;">Calcula piezas, mortero y junta necesarios según las dimensiones de tu muro. Optimizada para celular. Desarrollada por Proyecta.</div>
         </div>
-        <a href="https://javierchavezmzt.github.io/calculadora-ladrillos/" target="_blank" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
+        <a href="https://app.proyectalatam.com/calculadora-ladrillos/" target="_blank" rel="noopener" class="tool-btn" style="flex-shrink:0; padding:10px 18px; background:#1a1a1a; color:#F5F3F0; font-size:13px; font-weight:700; text-decoration:none; font-family:sans-serif; white-space:nowrap;">Usar →</a>
       </div>
     </div>
     <div style="background:#F5F3F0; border:1px dashed #ccc; border-radius:4px; padding:1.5rem 1.75rem; text-align:center;">
       <div style="font-size:14px; color:#999; font-family:sans-serif; margin-bottom:1rem;">Más herramientas en camino — suscríbete para ser el primero en saber.</div>
-      <div style="display:flex; gap:0; max-width:420px; margin:0 auto;">
-        <input id="email-tools" type="email" placeholder="tu@email.com" style="flex:1; padding:10px 14px; font-size:14px; border:1px solid #ccc; background:#fff; outline:none; font-family:sans-serif;" />
+      <div class="tool-form" style="display:flex; gap:0; max-width:420px; margin:0 auto;">
+        <input class="tool-input" id="email-tools" type="email" placeholder="tu@email.com" style="flex:1; padding:10px 14px; font-size:14px; border:1px solid #ccc; background:#fff; outline:none; font-family:sans-serif;" />
         <button onclick="subscribeTools()" style="padding:10px 16px; font-size:13px; font-weight:700; background:#E85D04; color:#fff; border:none; cursor:pointer; font-family:sans-serif;">Me apunto</button>
       </div>
       <p id="msg-tools" style="font-size:12px; color:#999; margin-top:8px;"></p>
@@ -265,3 +321,6 @@ function goToSubscribe() {
   setTimeout(() => { document.getElementById('email-home').focus(); }, 100);
 }
 </script>
+
+</body>
+</html>
