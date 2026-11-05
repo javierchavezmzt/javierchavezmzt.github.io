@@ -56,6 +56,9 @@
   .cta-note { font-size: 13px; color: #999; margin-top: 8px; }
 
   /* CTA 2 */
+  .news-link { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #E85D04; text-decoration: none; }
+  .news-link:hover { text-decoration: underline; }
+  .cta2-block .news-link { margin-top: 12px; }
   .cta2-block { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
   .cta2-block .cta2-head { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
   .cta2-block .cta2-sub { font-size: 15px; color: #666; margin-bottom: 1.5rem; }
@@ -148,6 +151,7 @@
       <button onclick="subscribeHome()">Me apunto — es gratis</button>
     </div>
     <p id="msg-home" class="cta-note">Sin spam. Un correo a la semana. Te puedes dar de baja cuando quieras.</p>
+    <a class="news-link" href="https://constructor-de-mentalidades.beehiiv.com/?utm_source=sitio&amp;utm_medium=web&amp;utm_campaign=numeros_anteriores&amp;utm_content=hero" target="_blank" rel="noopener">¿Quieres ver cómo son? Lee los números anteriores →</a>
 
     <div class="value-section">
       <div class="value-label">Qué recibes al suscribirte</div>
@@ -156,6 +160,7 @@
           <div class="vc-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
           <div class="vc-title">Newsletter semanal</div>
           <div class="vc-desc">Cada lunes una idea sobre mentalidad, carácter o decisiones — desde la lógica de un ingeniero.</div>
+          <a class="vc-link" href="https://constructor-de-mentalidades.beehiiv.com/?utm_source=sitio&amp;utm_medium=web&amp;utm_campaign=numeros_anteriores&amp;utm_content=tarjeta" target="_blank" rel="noopener" style="text-decoration:none">Ver números anteriores →</a>
         </div>
         <div class="value-card">
           <div class="vc-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
@@ -196,6 +201,7 @@
         <button onclick="subscribeHome2()">Me apunto</button>
       </div>
       <p id="msg-home2" style="font-size:12px; color:#999; margin-top:8px;"></p>
+      <a class="news-link" href="https://constructor-de-mentalidades.beehiiv.com/?utm_source=sitio&amp;utm_medium=web&amp;utm_campaign=numeros_anteriores&amp;utm_content=cierre" target="_blank" rel="noopener">O lee primero los números anteriores →</a>
     </div>
   </div>
 
@@ -293,7 +299,7 @@ function subscribeHome() {
     document.getElementById('msg-home').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
-  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?utm_source=sitio&utm_medium=web&utm_content=form_hero&email=' + encodeURIComponent(email), '_blank');
 }
 
 function subscribeTools() {
@@ -303,7 +309,7 @@ function subscribeTools() {
     document.getElementById('msg-tools').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
-  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?utm_source=sitio&utm_medium=web&utm_content=form_herramientas&email=' + encodeURIComponent(email), '_blank');
 }
 
 function subscribeHome2() {
@@ -313,7 +319,7 @@ function subscribeHome2() {
     document.getElementById('msg-home2').textContent = 'Por favor ingresa un correo válido.';
     return;
   }
-  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  window.open('https://constructor-de-mentalidades.beehiiv.com/subscribe?utm_source=sitio&utm_medium=web&utm_content=form_cierre&email=' + encodeURIComponent(email), '_blank');
 }
 
 function goToSubscribe() {
